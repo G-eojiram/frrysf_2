@@ -1,14 +1,22 @@
 <script>
 import contents from '@/components/message-content.vue'
 import calendarCard from '@/components/calendar.vue'
-
+import popupNewpost from '@/components/newpostForm.vue'
 export default {
   components: {
     contents,
-    calendarCard
+    calendarCard,
+    popupNewpost,
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal
+    }
   },
   data() {
     return {
+      // pop up new post
+      showModal: false,
       //icons
       pending: require('@/assets/images/Data Pending.png'),
       users: require('@/assets/images/People.png'),
@@ -105,11 +113,13 @@ export default {
             <contents msg="Dashboard"/>
         </div>
         <div class="flex gap-5">
-          <button class="lightgreen flex items-center gap-2 py-[2px] px-[1.5rem] rounded-md">
+          <button @click="toggleModal" 
+            class="lightgreen flex items-center gap-2 py-[2px] px-[1.5rem] rounded-md">
             <img :src="writelICON" alt="" class="w-[1.5rem]" />
             <span class="text-white font-semibold text-[12px]">New Post</span>
           </button>
-            <calendarCard />
+          <popupNewpost v-if="showModal" @close="toggleModal"/>
+          <calendarCard />
         </div>
     </div>
     <div class="mt-[1rem] lg:flex lg:gap-7">
