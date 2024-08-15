@@ -31,7 +31,7 @@ export default {
 <template>
     <div class="flex justify-between items-center">
         <div class="graycolor">
-            <contents msg="Animal Profile"/>
+            <contents msg="Rescue Operation"/>
         </div>
         <div>
             <calendarCard />

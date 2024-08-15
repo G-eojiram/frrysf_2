@@ -21,6 +21,8 @@ import profileContent from '../views/Admin/userprofile.vue'
 //shelter
 import sdashboardContent from '../views/Shelter/dashboard.vue'
 import myshelterContent from '../views/Shelter/myShelter.vue'
+import animalprofileContent from '../views/Shelter/animalProfile.vue'
+import rescueOperationContent from '../views/Shelter/rescueOperation.vue'
 
 const routes = [
   { //index
@@ -98,25 +100,20 @@ const routes = [
           name: 'sdashboardContent',
           component: sdashboardContent
         },
-        { // change this
+        { // My shelter
           path: '/shelter',
           name: 'myshelterContent',
           component: myshelterContent
         },
-        { // change this
-          path: '/manageapplication',
-          name: 'applicationContent',
-          component: applicationContent
+        { // Animal Profile
+          path: '/animalprofile',
+          name: 'animalprofileContent',
+          component: animalprofileContent
         },
         { // change this
-          path: '/manageuser',
-          name: 'userContent',
-          component: userContent
-        },
-        { // change this
-          path: '/managemap',
-          name: 'mapContent',
-          component: mapContent
+          path: '/rescueoperation',
+          name: 'rescueOperationContent',
+          component: rescueOperationContent
         },
         { // Profile change this
           path: '/yourprofile',
