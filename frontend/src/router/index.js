@@ -20,6 +20,7 @@ import profileContent from '../views/Admin/userprofile.vue'
 
 //shelter
 import sdashboardContent from '../views/Shelter/dashboard.vue'
+import myshelterContent from '../views/Shelter/myShelter.vue'
 
 const routes = [
   { //index
@@ -98,9 +99,9 @@ const routes = [
           component: sdashboardContent
         },
         { // change this
-          path: '/managepets',
-          name: 'managepetsContent',
-          component: managepetsContent
+          path: '/shelter',
+          name: 'myshelterContent',
+          component: myshelterContent
         },
         { // change this
           path: '/manageapplication',

@@ -14,12 +14,68 @@ export default {
       users: require('@/assets/images/People.png'),
       complaints: require('@/assets/images/Strike.png'),
       calendarICON: require('@/assets/images/Calendar.png'),
-      profileICON: require('@/assets/images/Profile.png'),
-      ratingICON: require('@/assets/images/Ratings.png'),
-      animalICON: require('@/assets/images/Animal.png'),
       writelICON: require('@/assets/images/write.png'),
+      heartPaw: require('@/assets/images/Heartdogpaw.png'),
       //image
       pet: require('@/assets/images/rescue.png'),
+      map: require('@/assets/images/mapExample.png'),
+      // for loop for updates content
+      updateActivity: [
+        {
+          label: 'Profile Visits',
+          value: '00',
+          icon: require('@/assets/images/Profile.png'),
+          color: 'green',
+          width: '4rem'
+        },
+        {
+          label: 'Number of Pets',
+          value: '00',
+          icon: require('@/assets/images/Animal.png'),
+          color: 'teal',
+          width: '4rem'
+        },
+        {
+          label: 'Reviews',
+          value: '00',
+          icon: require('@/assets/images/Ratings.png'),
+          color: 'amber',
+          width: '2.9rem'
+        }
+      ],
+      // for loop for recent activies
+      recentActivities: [
+        {
+          datetime: "2023-03-01 14:30:00",
+          location: "Acacia",
+          status: "Successful Dog Rescue"
+        },
+        {
+          datetime: "2023-03-01 13:15:00",
+          location: "Panacan",
+          status: "Rescued Abandon Cat"
+        },
+        {
+          datetime: "2023-02-28 10:00:00",
+          location: "New Ecoland",
+          status: "Reported"
+        },
+        {
+          datetime: "2023-02-27 16:45:00",
+          location: "Mintal",
+          status: "Unknown Report"
+        },
+        {
+          datetime: "2023-02-26 12:30:00",
+          location: "Toril",
+          status: "Report Responded"
+        },
+        {
+          datetime: "2023-02-25 09:15:00",
+          location: "Talomo",
+          status: "Reported"
+        }
+      ]
     }
   },
 }
@@ -35,9 +91,15 @@ export default {
 .lightgreen{
   background-color: #40d494;
 }
+
+.hover\:bg-lightgreen:hover {
+    --tw-bg-opacity: 1;
+    background-color: #35c184;
+}
 </style>
 
 <template>
+  <div>
     <div class="flex justify-between items-center">
         <div class="graycolor">
             <contents msg="Dashboard"/>
@@ -50,88 +112,38 @@ export default {
             <calendarCard />
         </div>
     </div>
-
     <div class="mt-[1rem] lg:flex lg:gap-7">
       <div>
         <div>
           <img :src="pet" alt="animalshelterdog" class="lg:h-[23.5rem] lg:w-screen"/>
         </div>
         <div class="grid grid-flow-col sm:space-x-4 md:space-x-6 place-content-center justify-items-center sm:mt-[1rem]">
-          <div class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
-            <span class="font-semibold sm:text-[14px] lg:text-[17px]">Profile Visits</span>
-            <span class=" text-green-500 font-bold lg:text-[30px]">00</span>
-            <img :src="profileICON" alt="animalshelterdog" class="sm:w-[4rem] lg:w-[5rem]"/>
-          </div>
-          <div class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
-            <span class="font-semibold sm:text-[13.3px] lg:text-[17px]">Number of Pets</span>
-            <span class=" text-green-500 font-bold lg:text-[30px]">00</span>
-            <img :src="animalICON" alt="animalshelterdog" class="sm:w-[4rem] lg:w-[5rem]"/> 
-          </div>
-          <div class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
-            <span class="font-semibold sm:text-[14px] lg:text-[17px]">Reviews</span>
-            <span class=" text-green-500 font-bold lg:text-[30px]">00</span>
-            <img :src="ratingICON" alt="animalshelterdog" class="sm:w-[2.9rem] lg:w-[3.5rem]"/>
+          <div v-for="(item, index) in updateActivity"
+            :key="index" class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
+            <span class="font-semibold sm:text-[14px] lg:text-[17px]">{{ item.label }}</span>
+            <span :class="`text-${item.color}-500 font-bold lg:text-[30px]`">{{ item.value }}</span>
+            <img :src="item.icon" alt="animalshelterdog" :class="`sm:w-[${item.width}] lg:w-[${item.width}]`" />
           </div>
         </div>
-        <!-- <div class="border rounded-lg bg-white drop-shadow-md h-[20rem] mt-[1rem] py-[2rem] px-[4rem]">
-          <div class="mb-[1rem]">
-            <span class="font-bold graycolor lg:text-[17px]">Name sa Shelter</span>
-          </div>
-          <input type="text" id="email" placeholder="What's on your mind..."
-            class="border rounded-lg py-2 px-[2rem] w-[33rem]">
-        </div> -->
       </div>
-      <div class="border rounded-lg bg-white drop-shadow-md h-[35rem] sm:mt-[1rem] lg:mt-0 lg:w-screen">
-        <div class="border rounded-t-md bg-white h-[4rem]">
-
+      <div class="border rounded-lg bg-white drop-shadow-md h-[35rem] sm:mt-[1rem] lg:mt-0 lg:w-[66rem] mx-auto">
+        <div class="border rounded-t-md bg-white h-[4rem] flex items-center px-7 gap-x-2">
+          <img :src="heartPaw" alt="" class="sm:h-[1.5rem] lg:h-[2rem]" />
+          <span class="graycolor font-medium sm:text-[13px] lg:text-[1rem]">Recent Activity</span>
         </div>
-        <div>
+        <div class="grid grid-flow-col justify-between h-[31rem]">
+          <div class="px-14 py-4 space-y-4 text-[13.5px] overflow-y-auto">
+            <div v-for="(item, index) in recentActivities" :key="index" class="grid grid-flow-row">
+              <span>{{ item.datetime }}</span>
+              <span>{{ item.location }}</span>
+              <span>{{ item.status }}</span>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <img :src="map" alt="" class="h-[30.9rem] md:w-[20rem] object-cover" />
+          </div>
         </div>
       </div>
     </div>
-
-
-    <!-- <div class="my-[1rem] lg:flex lg:gap-x-[2rem]">
-      <div>
-        <div class="relative">
-          <img :src="pet" alt="animalshelterdog" class=""/>
-          <div class="lg:absolute lg:top-[13rem] lg:left-0 w-full h-full lg:flex justify-center items-center lg:z-10">
-            <div class="flex gap-x-[2rem]">
-              <div class="border rounded-md bg-white w-[12rem] p-[2rem]">
-                <div class="grid place-content-center justify-items-center">
-                  <span>Profile Visits</span>
-                  <span>Reviews</span>
-                  <img :src="profileICON" alt="animalshelterdog" class="w-[5rem]"/>
-                </div>
-              </div>
-              <div class="border rounded-md bg-white w-[12rem] p-[2rem]">
-                <div class="grid place-content-center justify-items-center">
-                  <span>Number of Pets</span>
-                  <span>Reviews</span>
-                  <img :src="animalICON" alt="animalshelterdog" class="w-[5rem]"/>                 
-                </div>
-              </div>
-              <div class="border rounded-md bg-white w-[12rem] p-[2rem]">
-                <div class="grid place-content-center justify-items-center">
-                  <span>Reviews</span>
-                  <span>Reviews</span>
-                  <img :src="ratingICON" alt="animalshelterdog" class="w-[3.5rem]"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-[7rem] border rounded-lg bg-white drop-shadow-md h-[17.4rem]">
-          dsad
-        </div>
-      </div>
-      <div class="border rounded-md bg-white drop-shadow-md lg:w-[90rem] h-[50rem]">
-        <div class="border rounded-t-md bg-white h-[4rem]">
-        </div>
-        <div class="p-[1rem]">
-          dsad
-        </div>
-      </div>
-    </div> -->
+  </div>
 </template>

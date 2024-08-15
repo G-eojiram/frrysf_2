@@ -200,7 +200,7 @@ import { RouterLink } from 'vue-router'
 const navigation = [
   { name: 'Shelter', to: { name: 'sdashboardContent' }, icon: shelterICON, current: true },
   { name: 'Dashboard', to: { name: 'sdashboardContent' }, icon: dashboardICON, current: false },
-  { name: 'My Shelter',to: { name: '' }, icon: myshelterICON, current: false },
+  { name: 'My Shelter',to: { name: 'myshelterContent' }, icon: myshelterICON, current: false },
   { name: 'Animal Profile', to: { name: '' }, icon: pawICON, current: false },
   { name: 'Rescue Operation', to: { name: '' }, icon: petsICON, current: false },
 ]
