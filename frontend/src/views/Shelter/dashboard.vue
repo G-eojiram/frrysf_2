@@ -33,23 +33,17 @@ export default {
           label: 'Profile Visits',
           value: '00',
           icon: require('@/assets/images/Profile.png'),
-          color: 'green',
-          width: '4rem'
         },
         {
           label: 'Number of Pets',
           value: '00',
           icon: require('@/assets/images/Animal.png'),
-          color: 'teal',
-          width: '4rem'
         },
         {
           label: 'Reviews',
           value: '00',
           icon: require('@/assets/images/Ratings.png'),
-          color: 'amber',
-          width: '2.9rem'
-        }
+        },
       ],
       // for loop for recent activies
       recentActivities: [
@@ -132,7 +126,7 @@ export default {
             :key="index" class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
             <span class="font-semibold sm:text-[14px] lg:text-[17px]">{{ item.label }}</span>
             <span :class="`text-${item.color}-500 font-bold lg:text-[30px]`">{{ item.value }}</span>
-            <img :src="item.icon" alt="animalshelterdog" :class="`sm:w-[${item.width}] lg:w-[${item.width}]`" />
+            <img :src="item.icon" alt="animalshelterdog" :class="`sm:w-[3.2rem] sm:h-[3rem] lg:w-[4.2rem] lg:h-[4rem]`" />
           </div>
         </div>
       </div>
