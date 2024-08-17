@@ -13,15 +13,17 @@
                         <h1 class="truncate text-2xl font-bold text-gray-900">{{ profile.name }}</h1>
                     </div>
                     <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
-                        <button type="button"
-                            class="inline-flex justify-center rounded-md bgteal px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-bgteal">
-                            <span class="sm:text-[11.5px] md:text-[14px] md:px-[1rem]">Create New Post</span>
-                        </button>
-                        <button type="button"
-                            class="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                            <PencilIcon class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-                            <span class="sm:text-[11.5px] md:text-[14px]">Edit Profile</span>
-                        </button>
+                        <!-- <button type="button"
+                          class="inline-flex justify-center rounded-md bgteal px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-bgteal">
+                          <span class="sm:text-[11.5px] md:text-[14px] md:px-[1rem]">Create New Post</span>
+                        </button> -->
+                        <router-link to="/editprofileform">
+                            <button type="button"
+                                class="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                <PencilIcon class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                                <span class="sm:text-[12.5px] md:text-[14px]">Edit Profile</span>
+                            </button>
+                        </router-link>
                     </div>
                 </div>
             </div>

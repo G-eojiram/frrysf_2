@@ -1,17 +1,20 @@
 <script>
 import contents from '@/components/message-content.vue'
 import calendarCard from '@/components/calendar.vue'
-import prolifeCard from '@/components/prolifeCard.vue'
+import profileCard from '@/components/prolifeCard.vue'
 import detailCard from '@/components/detailsCard.vue'
 import linkfooter from '@/components/linksFooter.vue'
+
+import profile_Card from '@/components/profileCard2.vue'
 
 export default {
   components: {
     contents,
     calendarCard,
-    prolifeCard,
+    profileCard,
     detailCard,
     linkfooter,
+    profile_Card,
   },
   data() {
     return {
@@ -54,13 +57,22 @@ export default {
             </div>
         </div>
         <div class="mt-[1rem]">
-          <prolifeCard />
+          <!-- <profileCard /> -->
+           <profile_Card/>
         </div>
         <div class="mt-[1rem] flex sm:flex-col md:flex-row lg:flex-row md:justify-between sm:w-full sm:gap-y-[1rem] md:gap-x-[1rem] ">
           <div><detailCard /></div>
           <div class="drop-shadow-md rounded-lg bg-white md:w-[29rem] lg:w-[47rem] h-screen">
-            <div class="p-[1rem]">
-              <span>feed</span>
+            <div class="">
+              <div class="flex justify-between border-b-2 items-center p-[1rem] sm:px-[2rem] lg:px-[3rem]">
+                <span class="">Shelter's Feed</span>
+                <router-link to="">
+                  <button type="button"
+                    class="inline-flex justify-center rounded-md bgteal px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-bgteal">
+                    <span class="sm:text-[12.5px] md:text-[14px] px-[7px]">Create New Post</span>
+                  </button>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
