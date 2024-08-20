@@ -43,14 +43,3 @@ const profile = {
     backgroundImage: require('@/assets/images/homepage.png'),
 }
 </script>
-
-<style>
-.bgteal{
-  background-color: #5AC3C3;
-}
-
-.hover\:bg-bgteal:hover {
-    --tw-bg-opacity: 1;
-    background-color: #43abab;
-}
-</style>

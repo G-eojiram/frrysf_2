@@ -26,8 +26,11 @@
                   <DialogTitle as="h3" class="mb-[1.5rem] text-[1.3rem] font-semibold leading-6 text-gray-700 flex justify-center">
                     Create New Post
                   </DialogTitle>
+                  <div>
+                    <PetList />
+                  </div>
                   <div class="mt-2">
-                    <textarea v-model="newpost" placeholder="What's on your mind..."
+                    <textarea v-model="newpost" placeholder="Write a caption or description of this post..."
                     class="border rounded-lg py-[1rem] px-6 w-[27rem] h-[8rem]" />
                   </div>
                   <div class="px-[2rem] py-[1rem]">
@@ -51,14 +54,10 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> -->
               <div class="flex justify-center">
                 <button type="button"
-                  class="inline-flex w-full justify-center rounded-md bg-green-500 px-[12.2rem] py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 sm:ml-3 sm:w-auto"
+                  class="inline-flex w-full justify-center rounded-md bgteal px-[12.2rem] py-2 text-sm font-semibold text-white shadow-sm hover:bg-bgteal sm:ml-3 sm:w-auto"
                   @click="open = false">Post</button>
-                <!-- <button type="button"
-                  class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-[2rem] py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                  @click="open = false" ref="cancelButtonRef">Cancel</button> -->
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -68,28 +67,36 @@
   </TransitionRoot>
 </template>
 
-<script setup>
+<script>
 import { ref } from 'vue'
+import PetList from '@/components/dropdownPetList.vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import images from '@/assets/images/PhotoGallery.png'
 
-const open = ref(true)
-const fileInput = ref(null)
-const imageUrls = ref([])
-
-function handleFileChange(event) {
-  const files = event.target.files;
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      imageUrls.value.push(event.target.result);
-    };
-    reader.readAsDataURL(file);
+export default {
+  components: { PetList, Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot },
+  data() {
+    return {
+      open: true,
+      fileInput: null,
+      imageUrls: [],
+      images: require('@/assets/images/PhotoGallery.png'),
+    }
+  },
+  methods: {
+    handleFileChange(event) {
+      const files = event.target.files;
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          this.imageUrls.push(event.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    },
+    removeImage(index) {
+      this.imageUrls.splice(index, 1);
+    }
   }
-}
-
-function removeImage(index) {
-  imageUrls.value.splice(index, 1);
 }
 </script>

@@ -83,23 +83,6 @@ export default {
 }
 </script>
 
-<style>
-.lightgraycolor{
-    background: #F5F5F5;
-}
-.graycolor{
-    color: #5A5A5A;
-}
-.lightgreen{
-  background-color: #40d494;
-}
-
-.hover\:bg-lightgreen:hover {
-    --tw-bg-opacity: 1;
-    background-color: #35c184;
-}
-</style>
-
 <template>
   <div>
     <div class="flex justify-between items-center">
@@ -107,12 +90,6 @@ export default {
             <contents msg="Dashboard"/>
         </div>
         <div class="flex gap-5">
-          <button @click="toggleModal" 
-            class="lightgreen flex items-center gap-2 py-[2px] px-[1.5rem] rounded-md">
-            <img :src="writelICON" alt="" class="w-[1.5rem]" />
-            <span class="text-white font-semibold text-[12px]">New Post</span>
-          </button>
-          <popupNewpost v-if="showModal" @close="toggleModal"/>
           <calendarCard />
         </div>
     </div>

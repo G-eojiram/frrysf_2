@@ -22,15 +22,6 @@ export default {
 };
 </script>
 
-<style>
-.lightgraycolor{
-    background: #F5F5F5;
-}
-.graycolor{
-    color: #5A5A5A;
-}
-</style>
-
 <template>
     <div class="border bg-white rounded-md p-[5px] px-5 space-x-2 text-[10px] flex items-center lightgraycolor">
       <div class="flex items-center">
