@@ -24,6 +24,9 @@ import myshelterContent from '../views/Shelter/myShelter.vue'
 import animalprofileContent from '../views/Shelter/animalProfile.vue'
 import rescueOperationContent from '../views/Shelter/rescueOperation.vue'
 import editprofileContent from '../views/Shelter/editProfile.vue'
+import viewprofileContent from '../views/Shelter/viewAnimalProfile.vue'
+import editAnimalProfileContent from '../views/Shelter/editAnimalProfile.vue'
+import createAnimalProfileContent from '../views/Shelter/createAnimalProfile.vue'
 
 const routes = [
   { //index
@@ -120,6 +123,21 @@ const routes = [
           path: '/editprofileform',
           name: 'editprofileContent',
           component: editprofileContent
+        },
+        { // 
+          path: '/viewprofileform',
+          name: 'viewprofileContent',
+          component: viewprofileContent
+        },
+        { // 
+          path: '/createAnimalProfileform',
+          name: 'createAnimalProfileContent',
+          component: createAnimalProfileContent
+        },
+        { // 
+          path: '/editAnimalProfileform',
+          name: 'editAnimalProfileContent',
+          component: editAnimalProfileContent
         },
         { // Profile change this
           path: '/yourprofile',

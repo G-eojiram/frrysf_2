@@ -1,6 +1,6 @@
 <template>
-    <div class="overflow-hidden bg-white drop-shadow-md sm:rounded-md text-gray-400 text-[13px] p-[1rem] sm:px-[4rem] md:px-[2rem] md:w-fit h-fit sm:w-full py-[2rem]">
-      <div class="container max-w-[20rem]">
+    <div id="wide" class="overflow-hidden bg-white drop-shadow-md sm:rounded-md text-gray-400 text-[13px] p-[1rem] sm:px-[4rem] md:px-[2rem]  md:w-fit h-fit sm:w-full py-[2rem]">
+      <div id="card" class="container sm:max-w-full  lg:max-w-[25rem]">
         <div class="mb-[1rem]">
           <span class="text-gray-600 font-semibold text-[14px]">About Shelter</span>
           <ul v-for="item in sentence" :key="item.id">
@@ -22,7 +22,7 @@
 <script setup>
 const sentence = [
   {
-    info: 'dsadhsiudosdhcxzxzcxcxcxc xzcxzcxzcxcxzsdsadsa sgiudhsudagdsd, hdusidgsaiodhisdhsaidsdgshs ushdiashdusdiushdsa dsahdsadsja'
+    info: 'dsadhsi udosdhcxzxzc xcxcxcsdsx zcxzcxzc xcxzsdsadsa sgiudhsudagdsd hdusidgsaiodhisdhsaidsdgshs ushdiashdusdiushdsa dsahdsadsja'
   },
 ]
 

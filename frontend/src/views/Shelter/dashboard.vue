@@ -93,12 +93,12 @@ export default {
           <calendarCard />
         </div>
     </div>
-    <div class="mt-[1rem] lg:flex lg:gap-7">
-      <div>
+    <div id="if" class="mt-[1rem] lg:flex lg:gap-7">
+      <div id="updates">
         <div>
-          <img :src="pet" alt="animalshelterdog" class="lg:h-[23.5rem] lg:w-screen"/>
+          <img id="dogIMG" :src="pet" alt="animalshelterdog" class="lg:h-[23.5rem] lg:w-screen"/>
         </div>
-        <div class="grid grid-flow-col sm:space-x-4 md:space-x-6 place-content-center justify-items-center sm:mt-[1rem]">
+        <div class="grid fl grid-flow-col sm:space-x-4 md:space-x-6 place-content-center justify-items-center sm:mt-[1rem]">
           <div v-for="(item, index) in updateActivity"
             :key="index" class="border rounded-lg bg-white drop-shadow-md p-[1rem] sm:w-[9rem] md:w-[13rem] grid place-content-center justify-items-center">
             <span class="font-semibold sm:text-[14px] lg:text-[17px]">{{ item.label }}</span>
@@ -107,7 +107,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="border rounded-lg bg-white drop-shadow-md h-[35rem] sm:mt-[1rem] lg:mt-0 lg:w-[66rem] mx-auto">
+      <div id="history" class="border rounded-lg bg-white drop-shadow-md h-[35rem] sm:mt-[1rem] lg:mt-0 lg:w-[66rem] mx-auto">
         <div class="border rounded-t-md bg-white h-[4rem] flex items-center px-7 gap-x-2">
           <img :src="heartPaw" alt="" class="sm:h-[1.5rem] lg:h-[2rem]" />
           <span class="graycolor font-medium sm:text-[13px] lg:text-[1rem]">Recent Activity</span>
@@ -121,7 +121,7 @@ export default {
             </div>
           </div>
           <div class="flex justify-center items-center">
-            <img :src="map" alt="" class="h-[30.9rem] md:w-[20rem] object-cover" />
+            <img id="mapIMG" :src="map" alt="" class="h-[30.9rem] md:w-[20rem] object-cover" />
           </div>
         </div>
       </div>
