@@ -151,4 +151,7 @@
         padding-right: 2rem;
     }
 }
+/* input[type="date"]::-webkit-input-value {
+  visibility: hidden;
+} */
 </style>

@@ -38,7 +38,7 @@
                       <span class="text-gray-400 text-[14px]">Add to your post</span>
                       <label for="file-input" class="cursor-pointer flex gap-3 items-center">
                         <input type="file" multiple @change="handleFileChange" id="file-input" ref="fileInput" class="hidden" />
-                        <img :src="images" alt="Images Icon" class="h-[2rem] w-[2rem]"/> Photo / Video
+                        <img :src="images" alt="Images Icon" class="h-[2rem] w-[2rem]"/>
                       </label>
                     </div>
                     <div v-if="imageUrls.length > 0" class="grid grid-cols-4 gap-2">
